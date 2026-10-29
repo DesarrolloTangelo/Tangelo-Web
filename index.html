@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <style>
 /* Ajustes solicitados 29-10-2026 */
-.header .logo { font-size: calc(1.9rem + 3pt) !important; }
+.header .logo { font-size: calc(1.9rem + 5pt) !important; }
 .datos { border-top: 0 !important; border-bottom: 0 !important; }
 .dato + .dato { border-left: 2px solid #EB685C !important; }
 .banda--proveedores { background: #04142E !important; color: #fff !important; }
@@ -31,6 +31,25 @@
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FinancialService", "name": "Tangelo", "url": "https://www.tangelo.mx/", "telephone": "+52 55 4981 2525", "description": "Arrendamiento puro de equipo médico, de TI y de transporte para empresas y personas físicas con actividad empresarial en México.", "address": {"@type": "PostalAddress", "streetAddress": "Antonio Dovalí Jaime No. 70, Plaza Samara, Torre A, Piso 4", "addressLocality": "Álvaro Obregón, Ciudad de México", "postalCode": "01210", "addressCountry": "MX"}, "openingHours": "Mo-Fr 08:00-17:00", "areaServed": "MX", "foundingDate": "1996"}</script>
+
+<style>
+/* Ajustes solicitados 29-10-2026 - ronda 2 */
+
+/* Cuadro de asesor en blanco */
+.hero-asesor { background:#fff !important; color:#04142E !important; border:1px solid #E1E5EE; box-shadow:0 10px 28px rgba(4,20,46,.08); }
+/* Etiquetas centradas sobre las imágenes */
+.hero-activo span { left:50% !important; right:auto !important; transform:translateX(-50%) !important; text-align:center; white-space:nowrap; }
+/* Franja de datos: tres métricas y separadores más gruesos */
+.datos { grid-template-columns:repeat(3,1fr) !important; border-top:0 !important; border-bottom:0 !important; }
+.dato + .dato { border-left:3px solid #EB685C !important; }
+/* Círculos de Cómo funciona siguen el orden cromático de la línea superior */
+#como-funciona .paso:nth-child(1)::before { background:#FAAE60 !important; color:#04142E !important; }
+#como-funciona .paso:nth-child(2)::before { background:#EB685C !important; color:#fff !important; }
+#como-funciona .paso:nth-child(3)::before { background:#4835FF !important; color:#fff !important; }
+#como-funciona .paso:nth-child(4)::before { background:#06C992 !important; color:#04142E !important; }
+@media(max-width:760px){ .datos{grid-template-columns:1fr !important;} .dato + .dato{border-left:0 !important;border-top:3px solid #EB685C !important;} }
+
+</style>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -77,10 +96,9 @@
 
 <div class="contenedor">
   <div class="datos">
-    <div class="dato"><strong>30 años</strong><span>financiando al sector productivo</span></div>
-    <div class="dato"><strong>Más de 20,000 millones</strong><span>de pesos total histórico de originación</span></div>
-    <div class="dato"><strong>Más de 3,000 millones</strong><span>en activos arrendados</span></div>
-    <div class="dato"><strong>32 entidades</strong><span>con cobertura en la República Mexicana</span></div>
+    <div class="dato"><strong>+30 años</strong><span>financiando al sector productivo</span></div>
+    <div class="dato"><strong>+20,000 millones</strong><span>de pesos total histórico de originación</span></div>
+    <div class="dato"><strong>+3,000 millones</strong><span>en activos arrendados</span></div>
   </div>
 </div>
 

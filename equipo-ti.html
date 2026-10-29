@@ -18,6 +18,33 @@
 <link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FinancialService", "name": "Tangelo", "url": "https://www.tangelo.mx/", "telephone": "+52 55 4981 2525", "description": "Arrendamiento puro de equipo médico, de TI y de transporte para empresas y personas físicas con actividad empresarial en México.", "address": {"@type": "PostalAddress", "streetAddress": "Antonio Dovalí Jaime No. 70, Plaza Samara, Torre A, Piso 4", "addressLocality": "Álvaro Obregón, Ciudad de México", "postalCode": "01210", "addressCountry": "MX"}, "openingHours": "Mo-Fr 08:00-17:00", "areaServed": "MX", "foundingDate": "1996"}</script>
+
+<style>
+.header .logo { font-size: calc(1.9rem + 5pt) !important; }
+
+/* Ajustes solicitados 29-10-2026 - ronda 2 */
+.header .nav a[aria-current="page"] { box-shadow: inset 0 -3px 0 #FAAE60 !important; }
+</style>
+
+<style>
+/* Ajustes solicitados 29-10-2026 - ronda 2 */
+
+.equipamiento-layout { display:block !important; }
+.equipamiento-layout > .bloque-para-quien,
+.equipamiento-layout > .bloque-que-arrendar { width:100%; }
+.equipamiento-layout > .bloque-que-arrendar { margin-top:44px; }
+.equipamiento-layout .bloque-para-quien .lista-check { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px 28px; }
+.equipamiento-layout .bloque-que-arrendar .rejilla { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+@media(max-width:900px){
+  .equipamiento-layout .bloque-para-quien .lista-check { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .equipamiento-layout .bloque-que-arrendar .rejilla { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+}
+@media(max-width:600px){
+  .equipamiento-layout .bloque-para-quien .lista-check,
+  .equipamiento-layout .bloque-que-arrendar .rejilla { grid-template-columns:1fr !important; }
+}
+
+</style>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -42,7 +69,7 @@
     <h1>Tecnología siempre vigente <span>para su empresa.</span></h1>
     <p class="lead">Equipe a su equipo de trabajo con computadoras, servidores e infraestructura mediante una renta mensual fija, y renueve al terminar el plazo para evitar la obsolescencia.</p>
     <div class="acciones">
-      <a class="btn btn--primario" href="contacto.html?equipo=ti">Cotizar equipo de ti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      <a class="btn btn--primario" href="contacto.html?equipo=ti">Cotizar equipo de TI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
       <a class="btn btn--whatsapp" href="https://wa.me/525549812525" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2 9.8 9.8 0 0 1 21.8 12 9.8 9.8 0 0 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 0 0 23.8 12c0-3.2-1.2-6.1-3.4-8.4Z"/></svg> WhatsApp</a>
     </div>
     </div>
@@ -53,13 +80,13 @@
 </section>
 
 <section class="seccion" style="padding-top:40px">
-  <div class="contenedor dividido">
-    <div>
+  <div class="contenedor equipamiento-layout">
+    <div class="bloque-para-quien">
       <span class="etiqueta">Para quién</span>
       <h2>Diseñado para</h2>
       <ul class="lista-check"><li>PyMEs que están creciendo su plantilla</li><li>Corporativos que estandarizan sus equipos</li><li>Despachos, consultorías y oficinas</li><li>Centros educativos y de capacitación</li></ul>
     </div>
-    <div>
+    <div class="bloque-que-arrendar">
       <span class="etiqueta">Qué puede arrendar</span>
       <h2>Equipo que financiamos</h2>
       <div class="rejilla rejilla--2" style="gap:24px 32px"><div class="grupo-equipo"><h3>Cómputo personal</h3><p>Laptops, equipos de escritorio, estaciones de trabajo y monitores.</p></div><div class="grupo-equipo"><h3>Servidores y almacenamiento</h3><p>Servidores, almacenamiento en red y respaldo.</p></div><div class="grupo-equipo"><h3>Redes y telecomunicaciones</h3><p>Switches, routers, puntos de acceso y conmutadores.</p></div><div class="grupo-equipo"><h3>Impresión y digitalización</h3><p>Multifuncionales y escáneres: arrendamos equipo de impresión desde 1996.</p></div><div class="grupo-equipo"><h3>Punto de venta y periféricos</h3><p>Terminales, lectores y accesorios para su operación.</p></div><div class="grupo-equipo"><h3>¿Otro equipo?</h3><p>Cuéntenos qué necesita y lo evaluamos con usted.</p></div></div>
@@ -97,7 +124,7 @@
   <div class="contenedor dividido">
     <div>
       <span class="etiqueta">Preguntas frecuentes</span>
-      <h2>Dudas sobre equipo de ti</h2>
+      <h2>Dudas sobre equipo de TI</h2>
       <a class="btn btn--secundario" href="preguntas-frecuentes.html">Ver todas las preguntas</a>
     </div>
     <div class="faq"><details><summary>¿Puedo arrendar equipo para toda mi plantilla?</summary><div><p>Sí. Podemos evaluar el arrendamiento de varios equipos en una misma propuesta, de acuerdo con el tamaño de su operación.</p></div></details><details><summary>¿Qué pasa con mi información al devolver los equipos?</summary><div><p>Antes de la devolución le recomendamos respaldar y borrar su información. Su asesor le indica el procedimiento de entrega.</p></div></details><details><summary>¿Qué plazos manejan?</summary><div><p>Ofrecemos plazos flexibles de hasta 48 meses, que definimos con usted según el tipo de equipo y su flujo de efectivo.</p></div></details><details><summary>¿Qué pasa al terminar el plazo?</summary><div><p>Usted tiene tres opciones:</p><ul><li><strong>Renovar</strong> con equipo nuevo y mantener su operación actualizada.</li><li><strong>Devolver</strong> el equipo.</li><li><strong>Comprarlo</strong> a valor de mercado o al valor de salida que se haya pactado desde el inicio del contrato.</li></ul></div></details></div>
@@ -105,7 +132,7 @@
 </section>
 <section class="seccion" style="padding-top:0"><div class="contenedor">
   <div class="banda banda--marino">
-    <div><h2>Cotice su equipo de ti</h2><p>Comparta el equipo o la cotización de su proveedor y su asesor le enviará una propuesta.</p></div>
+    <div><h2>Cotice su equipo de TI</h2><p>Comparta el equipo o la cotización de su proveedor y su asesor le enviará una propuesta.</p></div>
     <a class="btn btn--claro" href="contacto.html?equipo=ti">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
   </div>
 </div></section>

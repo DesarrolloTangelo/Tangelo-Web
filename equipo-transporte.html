@@ -18,6 +18,33 @@
 <link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FinancialService", "name": "Tangelo", "url": "https://www.tangelo.mx/", "telephone": "+52 55 4981 2525", "description": "Arrendamiento puro de equipo médico, de TI y de transporte para empresas y personas físicas con actividad empresarial en México.", "address": {"@type": "PostalAddress", "streetAddress": "Antonio Dovalí Jaime No. 70, Plaza Samara, Torre A, Piso 4", "addressLocality": "Álvaro Obregón, Ciudad de México", "postalCode": "01210", "addressCountry": "MX"}, "openingHours": "Mo-Fr 08:00-17:00", "areaServed": "MX", "foundingDate": "1996"}</script>
+
+<style>
+.header .logo { font-size: calc(1.9rem + 5pt) !important; }
+
+/* Ajustes solicitados 29-10-2026 - ronda 2 */
+.header .nav a[aria-current="page"] { box-shadow: inset 0 -3px 0 #FAAE60 !important; }
+</style>
+
+<style>
+/* Ajustes solicitados 29-10-2026 - ronda 2 */
+
+.equipamiento-layout { display:block !important; }
+.equipamiento-layout > .bloque-para-quien,
+.equipamiento-layout > .bloque-que-arrendar { width:100%; }
+.equipamiento-layout > .bloque-que-arrendar { margin-top:44px; }
+.equipamiento-layout .bloque-para-quien .lista-check { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px 28px; }
+.equipamiento-layout .bloque-que-arrendar .rejilla { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+@media(max-width:900px){
+  .equipamiento-layout .bloque-para-quien .lista-check { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .equipamiento-layout .bloque-que-arrendar .rejilla { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+}
+@media(max-width:600px){
+  .equipamiento-layout .bloque-para-quien .lista-check,
+  .equipamiento-layout .bloque-que-arrendar .rejilla { grid-template-columns:1fr !important; }
+}
+
+</style>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -53,13 +80,13 @@
 </section>
 
 <section class="seccion" style="padding-top:40px">
-  <div class="contenedor dividido">
-    <div>
+  <div class="contenedor equipamiento-layout">
+    <div class="bloque-para-quien">
       <span class="etiqueta">Para quién</span>
       <h2>Diseñado para</h2>
       <ul class="lista-check"><li>Empresas de distribución y logística</li><li>Comercios con reparto propio</li><li>Empresas con traslado de personal</li><li>Constructoras y servicios de campo</li></ul>
     </div>
-    <div>
+    <div class="bloque-que-arrendar">
       <span class="etiqueta">Qué puede arrendar</span>
       <h2>Equipo que financiamos</h2>
       <div class="rejilla rejilla--2" style="gap:24px 32px"><div class="grupo-equipo"><h3>Utilitarios y reparto</h3><p>Vehículos compactos y de reparto urbano.</p></div><div class="grupo-equipo"><h3>Carga ligera</h3><p>Camionetas pickup y de carga.</p></div><div class="grupo-equipo"><h3>Traslado de personal</h3><p>Vans y unidades de pasajeros.</p></div><div class="grupo-equipo"><h3>Camiones ligeros</h3><p>Unidades para distribución y logística.</p></div><div class="grupo-equipo"><h3>Flotillas</h3><p>Varias unidades en una sola propuesta.</p></div><div class="grupo-equipo"><h3>¿Otro equipo?</h3><p>Cuéntenos qué necesita y lo evaluamos con usted.</p></div></div>
