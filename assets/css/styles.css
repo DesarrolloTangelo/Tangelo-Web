@@ -16,6 +16,19 @@
 @font-face { font-family: "DM Sans"; src: url("../fonts/dm-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "DM Sans"; src: url("../fonts/dm-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('../fonts/Apercu Pro Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('../fonts/Apercu Pro Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 :root {
   /* Marca */
   --naranja: #FAAE60;
@@ -46,7 +59,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0; font-family: var(--fuente); font-size: 17px; line-height: 1.6;
+  margin: 0; font-family:  var(--fuente); font-size: 17px; line-height: 1.6;
   color: var(--texto); background: var(--fondo); -webkit-font-smoothing: antialiased;
 }
 img, svg { display: block; max-width: 100%; }
@@ -394,3 +407,168 @@ p { margin: 0 0 1em; }
 /* Contacto: formulario + datos */
 .dividido--form { grid-template-columns: 1.3fr 1fr; }
 @media (max-width: 900px) { .dividido--form { grid-template-columns: 1fr; } }
+
+
+/* ========================================================================== 
+   Ajustes solicitados octubre 2026
+   ========================================================================== */
+
+/* Header institucional */
+.header {
+  background: #04142E;
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 4px;
+  background: linear-gradient(to right,
+    #FAAE60 0 25%,
+    #EB685C 25% 50%,
+    #04142E 50% 75%,
+    #06C992 75% 100%);
+}
+.header__barra { height: 78px; }
+.header .logo {
+  color: #fff;
+  font-size: 1.9rem;
+}
+.header .nav a {
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 9px;
+}
+.header .nav a:hover { background: rgba(255,255,255,.12); text-decoration: none; }
+.header .nav a[aria-current="page"] {
+  color: #fff;
+  background: #7F7F7F;
+}
+.header .nav .btn { background: #fff; color: #4835FF; }
+.header .nav .btn:hover { background: #F4F5F9; }
+.header .menu-toggle { color:#fff; }
+
+@media (max-width: 900px) {
+  .nav { background: #4835FF; border-bottom: 0; }
+  .nav a { border-bottom: 1px solid rgba(255,255,255,.16); }
+}
+
+/* Títulos/etiquetas solicitados en azul marino */
+.etiqueta--marino { color: #04142E !important; }
+
+/* Home */
+.hero-home .etiqueta {
+  color: #04142E;
+  font-size: calc(.8rem + 1px);
+}
+.hero-asesor {
+  max-width: 620px;
+  margin-top: 26px;
+  background: #4835FF;
+  color: #fff;
+  border-radius: 20px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.hero-asesor strong { font-size: 1.2rem; }
+.hero-asesor .btn { background:#fff; color:#4835FF; flex:none; }
+.hero-asesor .btn:hover { background:#F4F5F9; }
+
+.hero-activos {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  min-height: 430px;
+}
+.hero-activo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(145deg,#EDEBFF,#D9D4FF);
+  min-height: 200px;
+}
+.hero-activo:first-child { grid-row: 1 / 3; }
+.hero-activo img { width:100%; height:100%; object-fit:cover; }
+.hero-activo span {
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(4,20,46,.84);
+  color:#fff;
+  font-weight:700;
+  font-size:.9rem;
+}
+
+.banda--proveedores {
+  background:#4835FF;
+  color:#fff;
+  grid-template-columns:1fr;
+  align-items:start;
+}
+.banda--proveedores p { color:#fff; opacity:.88; max-width:none; }
+.banda--proveedores .etiqueta { color:#fff !important; }
+.banda--proveedores .btn { justify-self:start; margin-top:8px; background:#fff; color:#4835FF; }
+
+/* Hero con imagen para páginas de activo */
+.hero-interior-grid {
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:56px;
+  align-items:center;
+}
+.hero-interior-media {
+  min-height:360px;
+  border-radius:24px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#F4F5F9,#E5E8F2);
+}
+.hero-interior-media img { width:100%; height:100%; min-height:360px; object-fit:cover; }
+@media (max-width:900px) {
+  .hero-interior-grid { grid-template-columns:1fr; gap:28px; }
+  .hero-interior-media { min-height:260px; }
+  .hero-interior-media img { min-height:260px; }
+  .hero-activos { min-height:340px; }
+}
+@media (max-width:640px) {
+  .hero-asesor { align-items:flex-start; flex-direction:column; }
+  .hero-activos { grid-template-columns:1fr; grid-template-rows:auto; }
+  .hero-activo:first-child { grid-row:auto; }
+}
+
+/* Ciclo Proveedor → Tangelo → Cliente */
+.ciclo-aliados {
+  position:relative;
+  display:grid;
+  gap:18px;
+  padding:18px 0;
+}
+.ciclo-nodo {
+  position:relative;
+  padding:22px 24px;
+  border-radius:20px;
+  border:1px solid var(--borde);
+  background:#fff;
+  box-shadow:var(--sombra);
+}
+.ciclo-nodo h3 { color:#04142E; margin-bottom:6px; }
+.ciclo-nodo p { margin:0; color:var(--texto-suave); }
+.ciclo-nodo:nth-child(1){ border-left:6px solid #FAAE60; }
+.ciclo-nodo:nth-child(2){ border-left:6px solid #4835FF; }
+.ciclo-nodo:nth-child(3){ border-left:6px solid #06C992; }
+.ciclo-flecha { text-align:center; color:#4835FF; font-size:1.8rem; font-weight:700; line-height:1; }
+.ciclo-retorno {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  color:#04142E; font-weight:700; font-size:.9rem; margin-top:2px;
+}
+
+/* Ajustes específicos */
+.tabla thead th.destacado { background:#04142E; }
