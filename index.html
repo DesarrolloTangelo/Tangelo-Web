@@ -17,6 +17,19 @@
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
+<style>
+/* Ajustes solicitados 29-10-2026 */
+.header .logo { font-size: calc(1.9rem + 3pt) !important; }
+.datos { border-top: 0 !important; border-bottom: 0 !important; }
+.dato + .dato { border-left: 2px solid #EB685C !important; }
+.banda--proveedores { background: #04142E !important; color: #fff !important; }
+.banda--proveedores p, .banda--proveedores .etiqueta { color: #fff !important; }
+/* El botón conserva su estilo actual */
+@media (max-width: 760px) {
+  .dato:nth-child(n+3) { border-top: 0 !important; }
+}
+</style>
+
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FinancialService", "name": "Tangelo", "url": "https://www.tangelo.mx/", "telephone": "+52 55 4981 2525", "description": "Arrendamiento puro de equipo médico, de TI y de transporte para empresas y personas físicas con actividad empresarial en México.", "address": {"@type": "PostalAddress", "streetAddress": "Antonio Dovalí Jaime No. 70, Plaza Samara, Torre A, Piso 4", "addressLocality": "Álvaro Obregón, Ciudad de México", "postalCode": "01210", "addressCountry": "MX"}, "openingHours": "Mo-Fr 08:00-17:00", "areaServed": "MX", "foundingDate": "1996"}</script>
 </head>
 <body>
@@ -46,9 +59,18 @@
       </div>
     </div>
     <div class="hero-activos" aria-label="Activos que arrendamos">
-      <div class="hero-activo"><img src="assets/img/hero-medico.jpg" alt="Equipo médico" onerror="this.style.display='none'"><span>Equipo médico</span></div>
-      <div class="hero-activo"><img src="assets/img/hero-ti.jpg" alt="Equipo de tecnología" onerror="this.style.display='none'"><span>Equipo de TI</span></div>
-      <div class="hero-activo"><img src="assets/img/hero-transporte.jpg" alt="Equipo de transporte" onerror="this.style.display='none'"><span>Transporte</span></div>
+      <a class="hero-activo hero-activo--medico" href="equipo-medico.html">
+        <img src="assets/img/hero-medico.jpg" alt="Equipo médico moderno disponible para arrendamiento">
+        <span>Equipo médico</span>
+      </a>
+      <a class="hero-activo hero-activo--ti" href="equipo-ti.html">
+        <img src="assets/img/hero-ti.jpg" alt="Equipo de tecnología e infraestructura de TI">
+        <span>Equipo de TI</span>
+      </a>
+      <a class="hero-activo hero-activo--transporte" href="equipo-transporte.html">
+        <img src="assets/img/hero-transporte.jpg" alt="Vehículos comerciales y equipo de transporte">
+        <span>Transporte</span>
+      </a>
     </div>
   </div>
 </section>
