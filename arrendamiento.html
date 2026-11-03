@@ -32,6 +32,48 @@
 #requisitos .rejilla > .tarjeta:nth-child(2) .icono { background:#FAAE60 !important; color:#04142E !important; }
 
 </style>
+
+<style id="cambios-nov-2026">
+.aplica-linea{white-space:nowrap;}
+/* Espaciado uniforme en opciones al terminar el plazo */
+.opciones-plazo > *{margin-top:0!important;margin-bottom:0!important;}
+.opciones-plazo{gap:24px!important;}
+@media(max-width:900px){.aplica-linea{white-space:normal;}}
+</style>
+
+<style id="ajustes-arrendamiento-03-11-2026">
+/* Requisitos: iconos idénticos en formato, solo cambia el color */
+#requisitos .tarjeta .icono{
+  width:56px!important;
+  height:56px!important;
+  border-radius:16px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-shadow:0 8px 20px rgba(4,20,46,.12)!important;
+}
+#requisitos .tarjeta .icono svg{width:28px!important;height:28px!important;}
+#requisitos .tarjeta:nth-child(1) .icono{
+  background:linear-gradient(135deg,#4835FF 0%,#2B75ED 100%)!important;
+  color:#fff!important;
+}
+#requisitos .tarjeta:nth-child(2) .icono{
+  background:linear-gradient(135deg,#FAAE60 0%,#F6C56B 100%)!important;
+  color:#04142E!important;
+}
+/* Al terminar el plazo: tres columnas con separación idéntica */
+.opciones-fin-plazo{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  column-gap:56px!important;
+  row-gap:24px!important;
+  align-items:start!important;
+}
+.opciones-fin-plazo .beneficio{width:100%!important;margin:0!important;}
+@media(max-width:800px){
+  .opciones-fin-plazo{grid-template-columns:1fr!important;gap:24px!important;}
+}
+</style>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -42,7 +84,7 @@
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="nav" id="nav-principal" aria-label="Principal">
       <a href="arrendamiento.html" aria-current="page">Arrendamiento</a><a href="proveedores.html">Proveedores</a><a href="nosotros.html">Nosotros</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-      <a class="btn btn--primario" href="contacto.html">Solicitar cotización</a>
+      <a class="btn btn--primario" href="contacto.html">Solicite su cotización</a>
     </nav>
   </div>
 </header>
@@ -55,7 +97,7 @@
     <h1>La solución para equipar su negocio</h1>
     <p class="lead">Facilitamos el acceso a los activos que su empresa necesita para crecer, con soluciones de arrendamiento ágiles, flexibles y diseñadas para cada industria.</p>
     <div class="acciones">
-      <a class="btn btn--primario" href="contacto.html">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      <a class="btn btn--primario" href="contacto.html">Solicite su cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
       <a class="btn btn--secundario" href="#requisitos">Ver requisitos</a>
     </div>
   </div>
@@ -70,12 +112,12 @@
       </a><a class="tarjeta tarjeta--enlace" href="equipo-ti.html">
         <div class="icono "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></div>
         <h3>Equipo de TI</h3>
-        <p>Equipe a su equipo de trabajo con computadoras, servidores e infraestructura mediante una renta mensual fija, y renueve al terminar el plazo para evitar la obsolescencia..</p>
+        <p>Provea de herramientas tecnológicas a su equipo de trabajo, como computadoras, servidores e infraestructura, mediante una renta mensual fija y renueve al terminar el plazo para evitar la obsolescencia.</p>
         <span class="mas">Conocer más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
       </a><a class="tarjeta tarjeta--enlace" href="equipo-transporte.html">
         <div class="icono icono--naranja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
         <h3>Equipo de transporte</h3>
-        <p>Crezca su flotilla de reparto, carga o traslado de personal con rentas fijas y plazos de hasta 48 meses, sin comprometer su capital de trabajo..</p>
+        <p>Crezca su flotilla de reparto, carga o traslado de personal con rentas fijas y plazos de hasta 48 meses, sin comprometer su capital de trabajo.</p>
         <span class="mas">Conocer más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
       </a></div></div>
 </section>
@@ -126,7 +168,7 @@
       <span class="etiqueta">Al terminar el plazo</span>
       <h2>Usted decide qué sigue</h2>
     </div>
-    <div class="rejilla rejilla--3">
+    <div class="rejilla rejilla--3 opciones-fin-plazo">
       <div class="beneficio"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></svg></div><div><h3>Renovar</h3><p>Cambie a equipo nuevo y mantenga su operación actualizada.</p></div></div>
       <div class="beneficio"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div><div><h3>Devolver</h3><p>Entregue el equipo al concluir su contrato.</p></div></div>
       <div class="beneficio"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5"/><path d="M12 6v2M12 16v2"/></svg></div><div><h3>Comprar</h3><p>Adquiéralo a valor de mercado o al valor de salida pactado desde el inicio.</p></div></div>
@@ -143,10 +185,10 @@
         <p class="lead">Un asesor dedicado le acompaña desde la primera cotización hasta el término de su contrato.</p>
       </div>
       <ol class="recorrido">
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><div><h3>Primera cotización</h3><p>Entiende su necesidad y le presenta una propuesta a su medida.</p></div></li>
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 17c1.5-2 2.5-2 3.5 0s2 2 3.5 0"/></svg></div><div><h3>Firma y entrega</h3><p>Le guía con la documentación hasta que recibe su equipo.</p></div></li>
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><div><h3>Durante su contrato</h3><p>Es su punto de contacto para cualquier duda.</p></div></li>
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></svg></div><div><h3>Término del plazo</h3><p>Le acompaña a decidir si renueva, devuelve o compra.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><div><h3>Primera cotización</h3><p>Un especialista comercial entiende su necesidad y le presenta una propuesta personalizada.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 17c1.5-2 2.5-2 3.5 0s2 2 3.5 0"/></svg></div><div><h3>Firma y entrega</h3><p>Nuestro equipo de operaciones le guía con la documentación y coordina la entrega de su equipo.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><div><h3>Durante su contrato</h3><p>Durante el contrato, nuestro equipo de atención da seguimiento a sus dudas y solicitudes.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></svg></div><div><h3>Término del plazo</h3><p>Al término del plazo, un especialista le orienta sobre las opciones de renovar, devolver o comprar.</p></div></li>
       </ol>
     </div>
   </div>
@@ -154,7 +196,7 @@
 <section class="seccion" style="padding-top:0"><div class="contenedor">
   <div class="banda banda--marino">
     <div><h2>Cotice su arrendamiento</h2><p>Cuéntenos qué equipo necesita y le enviamos una propuesta.</p></div>
-    <a class="btn btn--claro" href="contacto.html">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+    <a class="btn btn--claro" href="contacto.html">Solicite su cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
   </div>
 </div></section>
 

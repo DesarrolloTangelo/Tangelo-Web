@@ -45,6 +45,47 @@
 }
 
 </style>
+
+<style id="cambios-nov-2026">
+/* Más aire entre los títulos “Diseñado para” / “Equipo que financiamos” y su contenido */
+.dividido > div > h2{margin-bottom:22px!important;}
+.dividido > div{padding-top:10px;padding-bottom:10px;}
+</style>
+
+<style id="ajuste-secciones-equipos-nov-2026">
+/* Bloques Para quién / Qué puede arrendar */
+.equipamiento-layout{display:block!important;}
+.bloque-para-quien,
+.bloque-que-arrendar{
+  width:100%!important;
+  border-radius:18px;
+  padding:34px 36px 36px;
+  box-sizing:border-box;
+}
+.bloque-para-quien{
+  background:#F2F3F5;
+}
+.bloque-que-arrendar{
+  background:#FFFFFF;
+  margin-top:34px!important;
+}
+.bloque-para-quien h2,
+.bloque-que-arrendar h2{
+  margin-top:8px;
+  margin-bottom:30px!important;
+}
+.bloque-para-quien .lista-check,
+.bloque-que-arrendar .rejilla{
+  margin-top:0!important;
+}
+@media(max-width:700px){
+  .bloque-para-quien,
+  .bloque-que-arrendar{padding:26px 22px 28px;}
+  .bloque-para-quien h2,
+  .bloque-que-arrendar h2{margin-bottom:24px!important;}
+}
+</style>
+
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -55,7 +96,7 @@
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="nav" id="nav-principal" aria-label="Principal">
       <a href="arrendamiento.html" aria-current="page">Arrendamiento</a><a href="proveedores.html">Proveedores</a><a href="nosotros.html">Nosotros</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-      <a class="btn btn--primario" href="contacto.html">Solicitar cotización</a>
+      <a class="btn btn--primario" href="contacto.html">Solicite su cotización</a>
     </nav>
   </div>
 </header>
@@ -111,10 +152,10 @@
         <p class="lead">Un asesor dedicado le acompaña desde la primera cotización hasta el término de su contrato.</p>
       </div>
       <ol class="recorrido">
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><div><h3>Primera cotización</h3><p>Entiende su necesidad y le presenta una propuesta a su medida.</p></div></li>
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 17c1.5-2 2.5-2 3.5 0s2 2 3.5 0"/></svg></div><div><h3>Firma y entrega</h3><p>Le guía con la documentación hasta que recibe su equipo.</p></div></li>
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><div><h3>Durante su contrato</h3><p>Es su punto de contacto para cualquier duda.</p></div></li>
-        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></svg></div><div><h3>Término del plazo</h3><p>Le acompaña a decidir si renueva, devuelve o compra.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><div><h3>Primera cotización</h3><p>Un especialista comercial entiende su necesidad y le presenta una propuesta personalizada.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 17c1.5-2 2.5-2 3.5 0s2 2 3.5 0"/></svg></div><div><h3>Firma y entrega</h3><p>Nuestro equipo de operaciones le guía con la documentación y coordina la entrega de su equipo.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><div><h3>Durante su contrato</h3><p>Durante el contrato, nuestro equipo de atención da seguimiento a sus dudas y solicitudes.</p></div></li>
+        <li><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></svg></div><div><h3>Término del plazo</h3><p>Al término del plazo, un especialista le orienta sobre las opciones de renovar, devolver o comprar.</p></div></li>
       </ol>
     </div>
   </div>
@@ -133,7 +174,7 @@
 <section class="seccion" style="padding-top:0"><div class="contenedor">
   <div class="banda banda--marino">
     <div><h2>Cotice su equipo de transporte</h2><p>Comparta el equipo o la cotización de su proveedor y su asesor le enviará una propuesta.</p></div>
-    <a class="btn btn--claro" href="contacto.html?equipo=transporte">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+    <a class="btn btn--claro" href="contacto.html?equipo=transporte">Solicite su cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
   </div>
 </div></section>
 
