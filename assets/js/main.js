@@ -56,6 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
       datos.pagina = location.pathname;
       const url = ENDPOINTS[form.dataset.form];
       const boton = form.querySelector("button[type=submit]");
+      // Nunca confirmar una recepción inexistente. Mantener datos del usuario.
+      if (!url) {
+        estado.textContent = "El envío del formulario todavía no está habilitado. Escríbenos por WhatsApp o llámanos al +52 55 4981 2525.";
+        estado.classList.add("error");
+        return;
+      }
       boton.disabled = true;
       try {
         if (url) {
