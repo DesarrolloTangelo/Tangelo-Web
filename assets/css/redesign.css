@@ -305,3 +305,228 @@ main .btn:hover{transform:translateY(-2px)}
 @media (max-width:1100px){.tg-strength-card{position:static;width:auto}.tg-strength-motion{min-height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.tg-strength-motion__center{position:relative;left:auto;top:auto;transform:none;width:auto;height:auto;padding:40px 24px;grid-column:1/-1;border-radius:30px}.tg-home-what .tg-photo-grid--home,.tg-compare__grid,.tg-requirements{grid-template-columns:repeat(2,1fr)}.pasos--wave{grid-template-columns:repeat(2,1fr)}.pasos--wave .paso:nth-child(n){margin-top:0}.tg-wave-steps__line{display:none}}
 @media (max-width:900px){.tg-home-where__grid,.tg-compare__grid,.tg-requirements{grid-template-columns:1fr}.tg-stat-orbs--four{min-height:480px}.tg-stat-orb--clients{left:auto;right:0;bottom:0}.tg-lease-orbit{min-height:390px}.tg-lease-orbit__item{width:155px;height:155px}.tg-lease-orbit__center{width:170px;height:170px}.tg-lease-orbit__center strong{font-size:1.35rem}}
 @media (max-width:600px){.tg-home-what .tg-photo-grid--home,.pasos--wave{grid-template-columns:1fr}.tg-home-where{padding:38px 0}.tg-home-where__chips span{font-size:.84rem;padding:10px 14px}.tg-stat-orbs--four{height:470px;min-height:470px}.tg-stat-orb--clients{width:135px;height:135px;left:auto;right:10px;bottom:10px}.tg-lease-orbit{min-height:300px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.tg-lease-orbit__center{grid-column:1/-1;position:static;transform:none;width:auto;height:auto;border-radius:28px;padding:28px 18px;order:-1}.tg-lease-orbit__item{position:static;width:100%;height:180px}.tg-strength-motion{grid-template-columns:1fr}}
+
+/* Tangelo: refinamientos solicitados – v4, 12/11/2026.
+   Todo está acotado al contenido; fuentes, navegación, línea de color y logo permanecen intactos. */
+
+/* INICIO / NUESTRA EXPERIENCIA: cuatro burbujas en cuadrícula flexible SIN superposiciones */
+.tg-home-numbers .tg-stat-orbs--four {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px 30px;justify-items:center;align-items:center;
+  width:100%;max-width:610px;min-height:0;height:auto;
+  margin-inline:auto;padding:4px 0;
+}
+.tg-stat-orbs--four .tg-stat-orb {
+  position:relative!important;inset:auto!important;top:auto!important;right:auto!important;
+  bottom:auto!important;left:auto!important;margin:0;
+  aspect-ratio:1;max-width:100%;height:auto!important;
+  flex-shrink:0;z-index:1;
+  transition:box-shadow .3s ease,scale .3s ease;
+}
+.tg-stat-orbs--four .tg-stat-orb:hover{scale:1.045;box-shadow:0 23px 50px rgba(4,20,46,.18)}
+.tg-stat-orbs--four .tg-stat-orb--years{width:min(100%,180px)}
+.tg-stat-orbs--four .tg-stat-orb--volume{width:min(100%,260px);background:var(--tg-blue);color:#fff}
+.tg-stat-orbs--four .tg-stat-orb--custom{width:min(100%,180px)}
+.tg-stat-orbs--four .tg-stat-orb--clients{width:min(100%,180px);background:var(--tg-mint);color:var(--tg-navy)}
+.tg-stat-orbs--four .tg-stat-orb strong{overflow-wrap:normal}
+.tg-stat-orbs--four .tg-stat-orb--clients strong{font-size:clamp(1.3rem,2vw,1.8rem)}
+
+/* INICIO / DÓNDE IMPULSAMOS: chips con la paleta original suavemente degradada */
+.tg-home-where__chips--motion{gap:14px 16px;align-items:center}
+.tg-home-where__chips--motion span{
+  color:var(--tg-navy);border-color:rgba(4,20,46,.07);
+  animation:tgSectorDrift 4.6s ease-in-out infinite;
+  will-change:translate;
+  transition:box-shadow .25s ease,scale .25s ease;
+}
+.tg-home-where__chips--motion span:nth-child(1){background:linear-gradient(135deg,rgba(250,174,96,.43),rgba(250,174,96,.13));animation-delay:-.4s}
+.tg-home-where__chips--motion span:nth-child(2){background:linear-gradient(135deg,rgba(235,104,92,.36),rgba(235,104,92,.10));animation-delay:-1.7s}
+.tg-home-where__chips--motion span:nth-child(3){background:linear-gradient(135deg,rgba(72,53,255,.30),rgba(72,53,255,.08));animation-delay:-2.6s}
+.tg-home-where__chips--motion span:nth-child(4){background:linear-gradient(135deg,rgba(6,201,146,.35),rgba(6,201,146,.09));animation-delay:-3.2s}
+.tg-home-where__chips--motion span:nth-child(5){background:linear-gradient(135deg,rgba(43,117,237,.32),rgba(43,117,237,.09));animation-delay:-.9s}
+.tg-home-where__chips--motion span:nth-child(6){background:linear-gradient(135deg,rgba(4,20,46,.18),rgba(4,20,46,.04));animation-delay:-2.1s}
+.tg-home-where__chips--motion span:hover{scale:1.045;box-shadow:0 16px 32px rgba(4,20,46,.10)}
+@keyframes tgSectorDrift{0%,100%{translate:0 0}50%{translate:0 -6px}}
+
+/* INICIO / CÓMO FUNCIONA: ruta con puntos ondulados separados de las tarjetas */
+#como-funciona .tg-journey{position:relative;isolation:isolate;padding:6px 0 8px;min-height:0}
+#como-funciona .tg-journey__path{position:absolute;left:0;top:0;width:100%;height:190px;overflow:visible;z-index:0;pointer-events:none}
+#como-funciona .tg-journey__path path{fill:none;stroke:var(--tg-blue);stroke-width:3.3;stroke-linecap:round;stroke-dasharray:1300;stroke-dashoffset:0;opacity:.85}
+.js-animations #como-funciona .tg-journey__path path{stroke-dashoffset:1300}
+.js-animations #como-funciona .tg-journey.is-visible .tg-journey__path path{animation:tgRouteDraw 2.7s cubic-bezier(.19,.8,.24,1) both}
+@keyframes tgRouteDraw{from{stroke-dashoffset:1300}to{stroke-dashoffset:0}}
+#como-funciona .tg-journey__list{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;
+  margin:0;padding:0;list-style:none;position:relative;z-index:1;align-items:start;
+}
+#como-funciona .tg-journey__item{min-width:0;display:flex;flex-direction:column;align-items:center;margin:0;position:relative}
+#como-funciona .tg-journey__pin{
+  width:52px;height:52px;min-width:52px;border:6px solid #fff;border-radius:50%;
+  display:grid;place-items:center;box-shadow:0 0 0 2px rgba(4,20,46,.10),0 12px 18px rgba(4,20,46,.12);
+  font-size:.88rem;font-weight:800;line-height:1;color:#fff;z-index:2;
+  transition:scale .3s ease;
+}
+#como-funciona .tg-journey__item:hover .tg-journey__pin{scale:1.13}
+#como-funciona .tg-journey__item:nth-child(1) .tg-journey__pin{margin-top:49px;background:var(--tg-orange);color:var(--tg-navy)}
+#como-funciona .tg-journey__item:nth-child(2) .tg-journey__pin{margin-top:104px;background:var(--tg-coral)}
+#como-funciona .tg-journey__item:nth-child(3) .tg-journey__pin{margin-top:49px;background:var(--tg-purple)}
+#como-funciona .tg-journey__item:nth-child(4) .tg-journey__pin{margin-top:104px;background:var(--tg-mint);color:var(--tg-navy)}
+#como-funciona .tg-journey__card{
+  width:100%;margin-top:38px;min-height:224px;
+  padding:28px 23px;border-radius:26px;background:#fff;
+  border:1px solid #E5E8F2;
+  box-shadow:0 13px 38px rgba(4,20,46,.08);
+  transition:translate .3s ease,box-shadow .3s ease;
+}
+#como-funciona .tg-journey__item:hover .tg-journey__card{translate:0 -5px;box-shadow:0 20px 42px rgba(4,20,46,.14)}
+#como-funciona .tg-journey__card h3{font-size:1.26rem;color:var(--tg-navy);margin:0 0 15px;line-height:1.2}
+#como-funciona .tg-journey__card p{font-size:.95rem;line-height:1.53;color:#4A5468;margin:0}
+#como-funciona .tg-journey__item:nth-child(1) .tg-journey__card{border-top:5px solid var(--tg-orange)}
+#como-funciona .tg-journey__item:nth-child(2) .tg-journey__card{border-top:5px solid var(--tg-coral)}
+#como-funciona .tg-journey__item:nth-child(3) .tg-journey__card{border-top:5px solid var(--tg-purple)}
+#como-funciona .tg-journey__item:nth-child(4) .tg-journey__card{border-top:5px solid var(--tg-mint)}
+
+/* INICIO / PARA ALIADOS y ARRENDAMIENTO / COTIZA: espaciado centrado */
+main .tg-home-allies-section{padding:82px 0 94px!important}
+main .tg-home-allies-section .tg-allies-cta{min-height:272px;align-items:center;align-content:center}
+main .tg-home-allies-section .tg-allies-cta__chips{display:none!important}
+main .tg-lease-end-section{padding:84px 0 92px!important}
+main .tg-lease-end-section .banda--marino{min-height:256px;align-items:center;align-content:center}
+
+/* ARRENDAMIENTO / REQUISITOS: solo icono y encabezado, sin 01 ni 02 */
+.tg-requirement-card__top>div>span{display:none}
+.tg-requirement-card__top h3{margin:0}
+
+/* ALIADOS / TAILOR MADE: verde + secuencia naranja, coral, morado */
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(1){background:linear-gradient(145deg,var(--tg-mint),rgba(6,201,146,.70))!important;color:var(--tg-navy)!important}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(1) p{color:var(--tg-navy)!important}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(1) .tg-num-dot{background:#fff;color:var(--tg-mint)}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(2){background:linear-gradient(145deg,rgba(250,174,96,.36),rgba(250,174,96,.10))}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(3){background:linear-gradient(145deg,rgba(235,104,92,.30),rgba(235,104,92,.10))}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(4){background:linear-gradient(145deg,rgba(72,53,255,.28),rgba(72,53,255,.09))}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(2) .tg-num-dot{background:var(--tg-orange);color:var(--tg-navy)}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(3) .tg-num-dot{background:var(--tg-coral);color:#fff}
+.tg-benefit-cloud--v4 .tg-cloud-card:nth-child(4) .tg-num-dot{background:var(--tg-purple);color:#fff}
+
+/* ALIADOS / RADAR: ejemplos por sector, interactivos, sin datos ficticios */
+.tg-radar{background:#EFF2F6;overflow:hidden}
+.tg-radar__tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:32px 0 22px}
+.tg-radar__tab{min-width:0;display:flex;gap:10px;align-items:center;justify-content:center;padding:16px 14px;border-radius:16px;cursor:pointer;font:inherit;font-size:.95rem;font-weight:750;line-height:1.2;background:#fff;border:1px solid #DDE4ED;color:var(--tg-navy);transition:translate .25s ease,background .25s ease,box-shadow .25s ease}
+.tg-radar__tab:hover{translate:0 -3px;box-shadow:0 10px 25px rgba(4,20,46,.08)}
+.tg-radar__tab:focus-visible{outline:3px solid var(--tg-blue);outline-offset:3px}
+.tg-radar__tab[aria-selected="true"]{background:var(--tg-navy);color:#fff;border-color:var(--tg-navy);box-shadow:0 12px 26px rgba(4,20,46,.16)}
+.tg-radar__tab-dot{display:inline-block;width:13px;height:13px;min-width:13px;border-radius:50%;background:var(--tg-orange)}
+.tg-radar__tab:nth-child(2) .tg-radar__tab-dot{background:var(--tg-coral)}
+.tg-radar__tab:nth-child(3) .tg-radar__tab-dot{background:var(--tg-purple)}
+.tg-radar__tab:nth-child(4) .tg-radar__tab-dot{background:var(--tg-mint)}
+.tg-radar__panel{display:grid;grid-template-columns:1fr 1.05fr;min-width:0;min-height:370px;overflow:hidden;border-radius:30px;background:#fff;box-shadow:0 22px 54px rgba(4,20,46,.09)}
+.tg-radar__panel[hidden]{display:none!important}
+.tg-radar__visual{min-height:370px;position:relative;overflow:hidden;background:#dfe5ee}
+.tg-radar__visual img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .7s ease}
+.tg-radar__panel:hover .tg-radar__visual img{transform:scale(1.045)}
+.tg-radar__visual:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(4,20,46,.75));pointer-events:none}
+.tg-radar__visual>span{position:absolute;left:25px;bottom:25px;right:25px;z-index:1;color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.06em;line-height:1.3}
+.tg-radar__details{padding:36px 38px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px}
+.tg-radar__eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.09em;color:var(--tg-blue)}
+.tg-radar__details h3{font-size:clamp(1.35rem,2.4vw,2.1rem);line-height:1.13;margin:0;color:var(--tg-navy)}
+.tg-radar__details>p{font-size:.98rem;line-height:1.58;color:#4A5468;margin:0}
+.tg-radar__assets{width:100%;border-left:4px solid var(--tg-mint);padding:8px 14px;background:rgba(6,201,146,.06);border-radius:0 15px 15px 0}
+.tg-radar__assets b{display:block;color:var(--tg-navy);margin-bottom:5px}
+.tg-radar__assets p{margin:0;line-height:1.48;color:#4A5468;font-size:.91rem}
+.tg-radar__link{color:var(--tg-purple);font-weight:800;text-decoration:none;margin-top:2px}
+.tg-radar__link:hover{text-decoration:underline}
+.tg-radar__footer{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:20px;padding:24px 30px;border-radius:22px;border:1px solid #DCE5EE;background:#fff}
+.tg-radar__footer>div{display:flex;flex-direction:column;gap:7px}
+.tg-radar__footer strong{font-size:1.05rem;color:var(--tg-navy)}
+.tg-radar__footer span{font-size:.94rem;color:#4A5468;line-height:1.45}
+
+/* NOSOTROS / FORTALEZA EN MOVIMIENTO: hub central y columnas en movimiento, sin cruces */
+.tg-trajectory{background:#F4F5F9;overflow:hidden}
+.tg-strength-v4{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.95fr) minmax(0,1fr);gap:24px;align-items:center;min-height:480px;margin-top:32px;position:relative}
+.tg-strength-v4__column{display:flex;flex-direction:column;gap:22px;min-width:0}
+.tg-strength-v4__column--right{padding-top:48px}
+.tg-strength-v4__card{position:relative;min-height:175px;padding:27px 26px;border-radius:27px;overflow:hidden;border:1px solid rgba(4,20,46,.08);box-shadow:0 14px 36px rgba(4,20,46,.08);animation:tgStrengthFloat 7.6s ease-in-out infinite;transition:box-shadow .25s ease,scale .25s ease}
+.tg-strength-v4__card:hover{scale:1.03;box-shadow:0 22px 45px rgba(4,20,46,.14)}
+.tg-strength-v4__card--orange{background:linear-gradient(135deg,rgba(250,174,96,.37),rgba(250,174,96,.09))}
+.tg-strength-v4__card--coral{background:linear-gradient(135deg,rgba(235,104,92,.29),rgba(235,104,92,.09));animation-delay:-2.4s}
+.tg-strength-v4__card--purple{background:linear-gradient(135deg,rgba(72,53,255,.28),rgba(72,53,255,.07));animation-delay:-3.5s}
+.tg-strength-v4__card--green{background:linear-gradient(135deg,rgba(6,201,146,.29),rgba(6,201,146,.07));animation-delay:-5.4s}
+.tg-strength-v4__card h3{color:var(--tg-navy);font-size:1.25rem;margin:4px 0 10px;line-height:1.2}
+.tg-strength-v4__card p{color:#4A5468;font-size:.9rem;line-height:1.5;margin:0}
+.tg-strength-v4__icon{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;font-size:.76rem;font-weight:800;background:var(--tg-orange);color:var(--tg-navy);margin-bottom:14px}
+.tg-strength-v4__card--coral .tg-strength-v4__icon{background:var(--tg-coral);color:#fff}
+.tg-strength-v4__card--purple .tg-strength-v4__icon{background:var(--tg-purple);color:#fff}
+.tg-strength-v4__card--green .tg-strength-v4__icon{background:var(--tg-mint);color:var(--tg-navy)}
+@keyframes tgStrengthFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.tg-strength-v4__hub{height:350px;position:relative;display:grid;place-items:center;isolation:isolate}
+.tg-strength-v4__ring{position:absolute;inset:12px;border-radius:50%;border:2px dashed rgba(72,53,255,.25);animation:tgStrengthOrbit 32s linear infinite}
+.tg-strength-v4__ring--two{inset:44px;border:2px dotted rgba(6,201,146,.4);animation-direction:reverse;animation-duration:24s}
+@keyframes tgStrengthOrbit{to{rotate:360deg}}
+.tg-strength-v4__core{width:215px;height:215px;padding:28px;border-radius:50%;background:var(--tg-navy);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:10px;box-shadow:0 22px 45px rgba(4,20,46,.2);z-index:2}
+.tg-strength-v4__core span{letter-spacing:.11em;font-size:.69rem;color:var(--tg-mint);font-weight:800}
+.tg-strength-v4__core strong{font-size:1.34rem;line-height:1.2}
+.tg-strength-v4__core i{width:26px;height:4px;border-radius:5px;background:var(--tg-mint);margin-top:5px}
+.tg-strength-v4__hub:before,.tg-strength-v4__hub:after{content:"";position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(43,117,237,.25),transparent);z-index:-1}
+.tg-strength-v4__hub:before{top:35%}.tg-strength-v4__hub:after{top:65%}
+
+/* Pantallas medianas y móviles: reflujo sin solapamientos */
+@media(max-width:1050px){
+  .tg-strength-v4{grid-template-columns:minmax(0,1fr) minmax(220px,.85fr) minmax(0,1fr);gap:15px}
+  .tg-strength-v4__card{padding:22px 19px}
+  .tg-strength-v4__hub{height:300px}
+  .tg-strength-v4__core{width:190px;height:190px}
+}
+@media(max-width:900px){
+  #como-funciona .tg-journey__list{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  #como-funciona .tg-journey__path{display:none}
+  #como-funciona .tg-journey__item:nth-child(n) .tg-journey__pin{margin-top:0}
+  #como-funciona .tg-journey__card{margin-top:19px;min-height:174px}
+  .tg-strength-v4{grid-template-columns:1fr;gap:22px;min-height:0}
+  .tg-strength-v4__hub{order:-1;height:310px}
+  .tg-strength-v4__column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .tg-strength-v4__column--right{padding-top:0}
+  .tg-strength-v4__card{min-height:185px}
+}
+@media(max-width:700px){
+  .tg-radar__tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tg-radar__panel{grid-template-columns:1fr}
+  .tg-radar__visual{min-height:270px}
+  .tg-radar__details{padding:28px 24px}
+  .tg-radar__footer{flex-direction:column;align-items:flex-start;padding:24px}
+  .tg-radar__footer .btn{width:100%;justify-content:center}
+}
+@media(max-width:580px){
+  .tg-home-numbers .tg-stat-orbs--four{gap:16px 10px;max-width:100%;height:auto;min-height:0;padding:10px 0}
+  .tg-stat-orbs--four .tg-stat-orb{width:min(100%,152px)!important;padding:14px}
+  .tg-stat-orbs--four .tg-stat-orb--volume{width:min(100%,171px)!important}
+  .tg-stat-orbs--four .tg-stat-orb strong{font-size:clamp(1.12rem,4.9vw,1.53rem)}
+  .tg-stat-orbs--four .tg-stat-orb--clients strong{font-size:clamp(1.07rem,4.6vw,1.43rem)}
+  .tg-stat-orbs--four .tg-stat-orb span{font-size:.72rem;margin-top:5px;line-height:1.26}
+  #como-funciona .tg-journey__list{display:flex;flex-direction:column;gap:18px;padding-left:2px}
+  #como-funciona .tg-journey__list:before{content:"";position:absolute;top:25px;bottom:30px;left:26px;border-left:3px dashed rgba(43,117,237,.3);pointer-events:none}
+  #como-funciona .tg-journey__item{width:100%;display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-items:center}
+  #como-funciona .tg-journey__item:nth-child(n) .tg-journey__pin{margin-top:0}
+  #como-funciona .tg-journey__card{margin-top:0;min-height:0;padding:21px 18px}
+  #como-funciona .tg-journey__card h3{font-size:1.12rem;margin-bottom:9px}
+  #como-funciona .tg-journey__card p{font-size:.88rem}
+  .tg-strength-v4__column{grid-template-columns:1fr}
+  .tg-strength-v4__hub{height:285px}
+  .tg-strength-v4__card{min-height:0}
+  main .tg-home-allies-section,main .tg-lease-end-section{padding:54px 0 66px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .tg-home-where__chips--motion span,.tg-strength-v4__card,.tg-strength-v4__ring{animation:none!important}
+ .js-animations #como-funciona .tg-journey__path path{stroke-dashoffset:0!important;animation:none!important}
+}
+
+/* Control adicional de anchos móviles: evita desbordes al publicar */
+.tg-home-hero{overflow:hidden}
+@media(max-width:900px){
+ .tg-lease-advantage .tg-advantage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tg-lease-advantage .tg-advantage--large{grid-row:span 2}
+}
+@media(max-width:620px){
+ .tg-lease-advantage .tg-advantage-grid{grid-template-columns:minmax(0,1fr)!important}
+ .tg-lease-advantage .tg-advantage--large{grid-row:auto;min-height:240px}
+ .tg-lease-advantage .tg-advantage{min-width:0}
+}
