@@ -49,3 +49,24 @@
     });
   });
 })();
+
+
+/* V5: select a financed asset category (accessible native buttons). */
+(() => {
+  const buttons = Array.from(document.querySelectorAll('[data-tg-asset]'));
+  if (!buttons.length) return;
+  const service = buttons[0].getAttribute('data-tg-asset');
+  const spotlight = document.querySelector(`[data-tg-spotlight="${service}"]`);
+  if (!spotlight) return;
+  const heading = spotlight.querySelector('[data-tg-asset-title]');
+  const detail = spotlight.querySelector('[data-tg-asset-detail]');
+  const count = spotlight.querySelector('[data-tg-asset-count]');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      buttons.forEach(other => other.setAttribute('aria-pressed', String(other===button)));
+      if (heading) heading.textContent = button.getAttribute('data-tg-asset-title') || '';
+      if (detail) detail.textContent = button.getAttribute('data-tg-asset-detail') || '';
+      if (count) count.textContent = String(button.getAttribute('data-tg-asset-index') || '1').padStart(2,'0') + ' / ' + String(buttons.length).padStart(2,'0');
+    });
+  });
+})();
