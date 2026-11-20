@@ -940,3 +940,158 @@ main .tg-lease-end-section .banda--marino{min-height:256px;align-items:center;al
 .tg-service-options-v5 .tg-audience-v5--brand .lista-check li:nth-child(3){border-top-color:var(--tg-brand-purple)!important}
 .tg-service-options-v5 .tg-audience-v5--brand .lista-check li:nth-child(4){border-top-color:var(--tg-brand-green)!important}
 .tg-service-options-v5 .tg-audience-v5--brand .lista-check li::before{background-color:var(--tg-brand-green)!important}
+
+
+/* ================================================================
+   AJUSTES 20-NOV-2026 — Solo secciones interiores.
+   Se mantiene intacto el header, el logotipo, styles.css y fonts.
+   ================================================================ */
+
+/* INICIO / CÓMO FUNCIONA: ruta recta y flechas pequeñas en movimiento
+   continuo hacia la derecha, sin círculos ni numeración. */
+#como-funciona .tg-journey{padding-top:4px!important;min-height:0!important}
+#como-funciona .tg-journey__path{display:none!important}
+#como-funciona .tg-journey__arrow-strip{
+  width:100%;height:48px;margin:2px 0 30px;position:relative;isolation:isolate;
+  overflow:hidden;display:flex;align-items:center;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent);
+  mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent);
+}
+#como-funciona .tg-journey__arrow-strip::before{
+  content:"";position:absolute;top:50%;left:0;right:0;height:2px;
+  background:var(--tg-brand-green);transform:translateY(-50%);opacity:.43;z-index:-1
+}
+#como-funciona .tg-journey__arrow-track{
+  display:flex;align-items:center;width:max-content;flex:0 0 auto;
+  animation:tg-arrows-go-right 14s linear infinite;will-change:transform
+}
+#como-funciona .tg-journey__arrow-group{
+  display:flex;align-items:center;gap:17px;padding-right:17px;white-space:nowrap;flex:0 0 auto
+}
+#como-funciona .tg-journey__arrow-group>span{
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--tg-brand-green);font-size:29px;font-weight:800;line-height:1;
+  width:18px;height:30px;text-shadow:0 1px 1px rgba(4,20,46,.10)
+}
+@keyframes tg-arrows-go-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+#como-funciona .tg-journey__list{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch!important;gap:18px}
+#como-funciona .tg-journey__list:before{display:none!important;content:none!important}
+#como-funciona .tg-journey__item{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  width:100%!important;min-width:0!important;height:100%;gap:0!important
+}
+#como-funciona .tg-journey__item:nth-child(n) .tg-journey__card{
+  margin:0!important;min-height:210px!important;height:100%;
+  display:flex;flex-direction:column;align-items:flex-start
+}
+
+/* ARRENDAMIENTO / ASÍ TRABAJAMOS: verde en la tarjeta grande;
+   amarillo en la tarjeta de adquisición al finalizar. */
+.tg-lease-advantage .tg-advantage-grid--brand .tg-advantage:first-child{
+  border-top-color:var(--tg-brand-green)!important
+}
+.tg-lease-advantage .tg-advantage-grid--brand .tg-advantage:nth-child(4){
+  border-top-color:var(--tg-brand-orange)!important
+}
+
+/* EQUIPOS / PARA QUIÉN: sección gris, contenedor blanco,
+   tarjetas individuales oscuras con líneas y checks originales. */
+section.tg-service-options-v5{background:#EFF2F6!important}
+.tg-service-options-v5 .tg-audience-v5--brand{
+  background:#fff!important;color:var(--tg-brand-navy)!important;
+  border:1px solid #E3E6EE!important;border-top:1px solid #E3E6EE!important;
+  box-shadow:0 10px 32px rgba(4,20,46,.055)
+}
+.tg-service-options-v5 .tg-audience-v5--brand::after{display:none!important;content:none!important}
+.tg-service-options-v5 .tg-audience-v5--brand h2,
+.tg-service-options-v5 .tg-audience-v5--brand .etiqueta{color:var(--tg-brand-navy)!important}
+/* No modificar .lista-check li: se conservan el azul, líneas de color,
+   letras blancas y palomita verde. */
+
+/* EQUIPOS / QUÉ PUEDES ARRENDAR: círculo por posición en el orden
+   de la paleta; cualquier selección activa vuelve a verde. */
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(1) .tg-asset-choice__number{
+  background:var(--tg-brand-orange)!important;color:var(--tg-brand-navy)!important}
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(2) .tg-asset-choice__number{
+  background:var(--tg-brand-coral)!important;color:#fff!important}
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(3) .tg-asset-choice__number{
+  background:var(--tg-brand-purple)!important;color:#fff!important}
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(4) .tg-asset-choice__number{
+  background:var(--tg-brand-green)!important;color:var(--tg-brand-navy)!important}
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(5) .tg-asset-choice__number{
+  background:var(--tg-brand-blue)!important;color:#fff!important}
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(6) .tg-asset-choice__number{
+  background:var(--tg-brand-orange)!important;color:var(--tg-brand-navy)!important}
+.tg-asset-explorer-v5 .tg-asset-choice:nth-child(n)[aria-pressed="true"] .tg-asset-choice__number{
+  background:var(--tg-brand-green)!important;color:var(--tg-brand-navy)!important;
+  box-shadow:0 0 0 3px rgba(6,201,146,.2);transition:background-color .25s ease,box-shadow .25s ease
+}
+
+/* EQUIPOS / BENEFICIOS: iconos nítidos, sólidos y en el color asignado.
+   Se conservan movimiento, bordes y tipografía de las tarjetas. */
+.tg-service-benefits-v5 .tg-service-benefit-v5 .icono{
+  opacity:1!important;filter:none!important;backdrop-filter:none!important;
+  background:var(--tg-brand-orange)!important;color:var(--tg-brand-navy)!important;
+  box-shadow:0 10px 22px rgba(250,174,96,.25)
+}
+.tg-service-benefits-v5 .tg-service-benefit-v5:nth-child(2) .icono{
+  background:var(--tg-brand-coral)!important;color:#fff!important;
+  box-shadow:0 10px 22px rgba(235,104,92,.22)
+}
+.tg-service-benefits-v5 .tg-service-benefit-v5:nth-child(3) .icono{
+  background:var(--tg-brand-purple)!important;color:#fff!important;
+  box-shadow:0 10px 22px rgba(72,53,255,.20)
+}
+.tg-service-benefits-v5 .tg-service-benefit-v5:nth-child(4) .icono{
+  background:var(--tg-brand-green)!important;color:var(--tg-brand-navy)!important;
+  box-shadow:0 10px 22px rgba(6,201,146,.2)
+}
+.tg-service-benefits-v5 .tg-service-benefit-v5 .icono svg{
+  opacity:1!important;filter:none!important;stroke:currentColor!important;
+  stroke-width:2.15!important;visibility:visible!important
+}
+
+/* NOSOTROS: líneas orbitales que giran continuamente alrededor
+   de las estadísticas, con marcadores de la misma paleta. */
+.tg-about-hero .tg-bubble-scene--brand .tg-orbit{
+  border-width:2px!important;border-style:dashed!important;
+  border-color:rgba(72,53,255,.55)!important;
+  transform-origin:50% 50%;will-change:transform;
+  animation:tg-about-orbit-clockwise 18s linear infinite!important
+}
+.tg-about-hero .tg-bubble-scene--brand .tg-orbit--two{
+  border-color:rgba(6,201,146,.60)!important;
+  animation:tg-about-orbit-counter 23s linear infinite!important
+}
+.tg-about-hero .tg-bubble-scene--brand .tg-orbit::after{
+  content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);
+  width:14px;height:14px;border-radius:50%;background:var(--tg-brand-purple);
+  box-shadow:0 0 0 4px rgba(72,53,255,.12),0 0 15px rgba(72,53,255,.3)
+}
+.tg-about-hero .tg-bubble-scene--brand .tg-orbit--two::after{
+  background:var(--tg-brand-green);
+  box-shadow:0 0 0 4px rgba(6,201,146,.12),0 0 15px rgba(6,201,146,.3)
+}
+@keyframes tg-about-orbit-clockwise{
+  from{transform:rotate(-12deg)}to{transform:rotate(348deg)}
+}
+@keyframes tg-about-orbit-counter{
+  from{transform:rotate(33deg)}to{transform:rotate(-327deg)}
+}
+
+@media(max-width:1100px){
+  #como-funciona .tg-journey__list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #como-funciona .tg-journey__item:nth-child(n) .tg-journey__card{min-height:175px!important}
+}
+@media(max-width:600px){
+  #como-funciona .tg-journey__list{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important;padding:0!important}
+  #como-funciona .tg-journey__item{display:block!important}
+  #como-funciona .tg-journey__item:nth-child(n) .tg-journey__card{height:auto!important;min-height:0!important;margin:0!important}
+  #como-funciona .tg-journey__arrow-strip{height:39px;margin:4px 0 22px}
+  #como-funciona .tg-journey__arrow-group>span{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){
+  #como-funciona .tg-journey__arrow-track{animation:none!important;transform:none!important}
+  .tg-about-hero .tg-bubble-scene--brand .tg-orbit{animation:none!important}
+  .tg-about-hero .tg-bubble-scene--brand .tg-orbit--two{animation:none!important}
+}
