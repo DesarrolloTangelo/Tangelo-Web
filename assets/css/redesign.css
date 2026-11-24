@@ -1103,33 +1103,41 @@ section.tg-service-options-v5{background:#EFF2F6!important}
    Reglas delimitadas: no modifican la cabecera, logo ni fuentes.
    ============================================================ */
 
-/* Avisos legales: centrados, sin enlaces amontonados. */
+/* PIE LEGAL: copyright alineado a la izquierda y enlaces a la derecha.
+   Columna de enlaces flexible, separación real y adaptación a tablet/móvil. */
 .footer .footer__legal {
-  display:flex;
-  flex-direction:column;
-  flex-wrap:nowrap;
+  display:grid;
+  grid-template-columns:minmax(265px, 1fr) minmax(0, 2fr);
   align-items:center;
-  justify-content:center;
-  gap:16px;
-  text-align:center;
+  justify-content:space-between;
+  column-gap:clamp(24px, 4vw, 58px);
+  row-gap:16px;
+  text-align:left;
 }
-.footer .footer__legal > span { display:block; line-height:1.6; }
+.footer .footer__legal > span {
+  display:block;
+  justify-self:start;
+  line-height:1.6;
+  min-width:0;
+}
 .footer .footer__legal ul {
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:flex-end;
   align-items:center;
   list-style:none;
   padding:0;
   margin:0;
-  gap:10px 26px;
+  gap:10px 25px;
+  min-width:0;
+  text-align:right;
 }
-.footer .footer__legal li { list-style:none; margin:0; padding:0; }
+.footer .footer__legal li {list-style:none;margin:0;padding:0;}
 .footer .footer__legal li a {
   display:inline-block;
   color:#fff;
   line-height:1.5;
-  padding:5px 0;
+  padding:6px 0;
   white-space:normal;
   text-decoration:underline;
   text-underline-offset:4px;
@@ -1141,16 +1149,56 @@ section.tg-service-options-v5{background:#EFF2F6!important}
   color:#FAAE60;
   text-decoration-color:currentColor;
 }
+/* En pantallas estrechas se apilan dos grupos centrados, sin saturarse. */
+@media (max-width:860px){
+  .footer .footer__legal {
+    grid-template-columns:minmax(0,1fr);
+    justify-items:center;
+    text-align:center;
+    gap:12px;
+  }
+  .footer .footer__legal > span {justify-self:center;}
+  .footer .footer__legal ul {justify-content:center;text-align:center;gap:7px 22px;}
+}
 @media (max-width:560px){
-  .footer .footer__legal ul {flex-direction:column;gap:8px;}
+  .footer .footer__legal ul {flex-direction:column;gap:5px;}
+  .footer .footer__legal li a {padding:5px 0;}
 }
 
-/* Arrendamiento: pictograma de Conversemos del mismo trazo y tamaño. */
-.tg-commitment__steps--brand .tg-commit-icon {
+/* NUESTRO COMPROMISO: en la versión anterior una regla antigua
+   coloreaba SOLO el primer span de naranja sólido y lo hacía circular.
+   Se anula con selectores específicos para que los 4 iconos sean uniformes. */
+.tg-commitment .tg-commitment__steps--brand li .tg-commitment__pictogram {
+  display:grid;
+  place-items:center;
+  width:57px;
+  height:57px;
+  border-radius:16px;
+  margin:2px 0 18px;
+  font:inherit;
+  background:rgba(250,174,96,.18);
+  color:var(--tg-brand-orange);
+}
+.tg-commitment .tg-commitment__steps--brand li:nth-child(2) .tg-commitment__pictogram {
+  background:rgba(235,104,92,.18);
+  color:var(--tg-brand-coral);
+}
+.tg-commitment .tg-commitment__steps--brand li:nth-child(3) .tg-commitment__pictogram {
+  background:rgba(72,53,255,.22);
+  color:#A8A0FF;
+}
+.tg-commitment .tg-commitment__steps--brand li:nth-child(4) .tg-commitment__pictogram {
+  background:rgba(6,201,146,.16);
+  color:var(--tg-brand-green);
+}
+.tg-commitment .tg-commitment__steps--brand .tg-commit-icon {
   display:block;
   width:29px;
   height:29px;
+  stroke:currentColor;
   stroke-width:1.8;
+  fill:none;
+  opacity:1;
 }
 
 /* Aliados: retirar numeración y colorear títulos según aro de cada círculo. */
