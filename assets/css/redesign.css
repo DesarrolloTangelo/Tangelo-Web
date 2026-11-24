@@ -1095,3 +1095,107 @@ section.tg-service-options-v5{background:#EFF2F6!important}
   .tg-about-hero .tg-bubble-scene--brand .tg-orbit{animation:none!important}
   .tg-about-hero .tg-bubble-scene--brand .tg-orbit--two{animation:none!important}
 }
+
+
+
+/* ============================================================
+   Tangelo | Ajustes solicitados 24-nov-2026
+   Reglas delimitadas: no modifican la cabecera, logo ni fuentes.
+   ============================================================ */
+
+/* Avisos legales: centrados, sin enlaces amontonados. */
+.footer .footer__legal {
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  text-align:center;
+}
+.footer .footer__legal > span { display:block; line-height:1.6; }
+.footer .footer__legal ul {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  list-style:none;
+  padding:0;
+  margin:0;
+  gap:10px 26px;
+}
+.footer .footer__legal li { list-style:none; margin:0; padding:0; }
+.footer .footer__legal li a {
+  display:inline-block;
+  color:#fff;
+  line-height:1.5;
+  padding:5px 0;
+  white-space:normal;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-color:rgba(255,255,255,.32);
+  transition:color .2s ease,text-decoration-color .2s ease;
+}
+.footer .footer__legal li a:hover,
+.footer .footer__legal li a:focus-visible {
+  color:#FAAE60;
+  text-decoration-color:currentColor;
+}
+@media (max-width:560px){
+  .footer .footer__legal ul {flex-direction:column;gap:8px;}
+}
+
+/* Arrendamiento: pictograma de Conversemos del mismo trazo y tamaño. */
+.tg-commitment__steps--brand .tg-commit-icon {
+  display:block;
+  width:29px;
+  height:29px;
+  stroke-width:1.8;
+}
+
+/* Aliados: retirar numeración y colorear títulos según aro de cada círculo. */
+.tg-allies-orbit .tg-allies-node--brand > span {display:none!important;}
+.tg-allies-orbit .tg-allies-node--a.tg-allies-node--brand strong {color:#FAAE60!important;}
+.tg-allies-orbit .tg-allies-node--t.tg-allies-node--brand strong {color:#2B75ED!important;}
+.tg-allies-orbit .tg-allies-node--c.tg-allies-node--brand strong {color:#06C992!important;}
+.tg-allies-orbit .tg-allies-node--brand strong {line-height:1.14;}
+.tg-allies-orbit .tg-allies-node--c.tg-allies-node--brand strong {font-size:clamp(.84rem,1.4vw,1.06rem)!important;letter-spacing:-.02em;}
+.tg-allies-orbit .tg-allies-ring {z-index:0;}
+.tg-allies-orbit .tg-allies-node {z-index:1;}
+.tg-allies-cycle-arrow {
+  position:absolute;
+  display:grid;
+  place-items:center;
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 2px 11px rgba(4,20,46,.11);
+  pointer-events:none;
+}
+.tg-allies-cycle-arrow svg {width:17px;height:17px;display:block;}
+.tg-allies-cycle-arrow--top {top:-15px;left:calc(50% - 14px);color:#FAAE60;}
+.tg-allies-cycle-arrow--right {right:4%;top:76%;color:#2B75ED;transform:rotate(135deg);}
+.tg-allies-cycle-arrow--bottom {bottom:10%;left:20%;color:#06C992;transform:rotate(225deg);}
+@media (max-width:600px){
+  .tg-allies-cycle-arrow {width:23px;height:23px;}
+  .tg-allies-cycle-arrow svg{width:15px;height:15px;}
+}
+@media (prefers-reduced-motion: reduce){
+  .tg-allies-orbit .tg-allies-ring{animation:none!important;}
+}
+
+/* Página legal: el PDF original es la fuente, no se transcribe ni altera. */
+.tg-privacy-hero .lead {max-width:760px;}
+.tg-privacy-actions {display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:25px;}
+.tg-privacy-actions .btn {max-width:100%;white-space:normal;text-align:center;}
+.tg-privacy-section {background:#F4F6FA;}
+.tg-privacy-viewer {background:#fff;border:1px solid #DFE5EF;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(4,20,46,.06);}
+.tg-privacy-viewer iframe {display:block;border:0;width:100%;height:min(82vh,900px);min-height:480px;}
+.tg-privacy-fallback {margin-top:14px;color:#394860;text-align:center;}
+.tg-privacy-fallback a {color:#2B75ED;text-decoration:underline;}
+@media (max-width:600px){
+ .tg-privacy-actions{flex-direction:column;align-items:stretch;}
+ .tg-privacy-actions .btn{width:100%;}
+ .tg-privacy-viewer iframe{min-height:390px;height:62vh;}
+}
