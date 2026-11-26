@@ -1360,3 +1360,78 @@ section.tg-service-options-v5{background:#EFF2F6!important}
   .tg-home-ready-cta{flex-direction:row!important;align-items:center!important;text-align:left!important}
   .tg-home-ready-cta>a.btn{align-self:center!important;margin:0!important}
 }
+
+
+/* ==============================================================
+   26 NOV 2026 – cambios de secciones, sin alterar el CSS original
+   de marca, logotipo, fuentes, header, assets ni contenido legal.
+   ============================================================== */
+
+/* Inicio / Preguntas frecuentes: fondo blanco (no gris). */
+main .tg-home-faq--white { background: #fff !important; }
+/* Inicio / Para aliados: superficie gris clara con banda intacta. */
+main .tg-home-allies-section--gray { background: #F2F4F7 !important; }
+
+/* Equipo médico / TI / transporte: Nuestro compromiso en blanco.
+   Los cuadros mantienen el azul marino y sus acentos corporativos. */
+main .tg-service-commitment-v5 { background: #fff !important; }
+
+/* Arrendamiento: cuatro motivos para equipar el negocio, alineados. */
+.tg-who-cta .tg-who-benefits-4 {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px !important;
+  max-width: 760px;
+  margin: 24px 0 20px !important;
+}
+.tg-who-cta .tg-who-benefits-4 .tg-who-profile {
+  min-width: 0; max-width: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: .82rem;
+  line-height: 1.4;
+}
+.tg-who-cta .tg-who-benefits-4 .tg-who-profile__icon {
+  width: 52px; height: 52px; flex: 0 0 52px;
+  padding: 12px !important;
+  border-radius: 16px !important;
+}
+.tg-who-cta .tg-who-benefits-4 .tg-who-profile--purple .tg-who-profile__icon {
+  background: rgba(72,53,255,.23) !important; color: #B0A9FF !important;
+}
+.tg-who-cta .tg-who-benefits-4 .tg-who-profile--green .tg-who-profile__icon {
+  background: rgba(6,201,146,.18) !important; color: #06C992 !important;
+}
+.tg-who-cta .tg-who-benefits-4 .tg-who-profile > span:last-child {
+  font-size: .83rem !important;
+  line-height: 1.42 !important;
+  overflow-wrap: normal;
+}
+
+/* Aliados / Radar: suficiente anchura para el CTA en un solo renglón. */
+.tg-radar__footer--compact { gap: 32px; }
+.tg-radar__footer--compact > div { flex: 1 1 auto; min-width: 0; }
+.tg-radar__footer--compact .btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  white-space: nowrap;
+  min-width: max-content;
+}
+.tg-radar__footer--compact .btn span { color: inherit; font-size: 1.1em; line-height: 1; }
+@media (max-width: 1100px) {
+  .tg-who-cta .tg-who-benefits-4 { max-width: none; width: 100%; }
+}
+@media (max-width: 720px) {
+  .tg-who-cta .tg-who-benefits-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px !important; }
+  .tg-radar__footer--compact { align-items: stretch; }
+  .tg-radar__footer--compact .btn { width: 100%; min-width: 0; white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  .tg-who-cta .tg-who-benefits-4 { gap: 14px 9px !important; }
+  .tg-who-cta .tg-who-benefits-4 .tg-who-profile > span:last-child { font-size: .77rem !important; }
+}
